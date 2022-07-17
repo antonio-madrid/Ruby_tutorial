@@ -40,6 +40,14 @@ print <<`EOF`
   pwd
 EOF
 
+# Global variables
+$mi_global_variable = "I am global"
+print $mi_global_variable
+
+# Local variables, its scope corresponds to a block of code or a module
+_mi_local_variable = "I am local"
+print _mi_local_variable
+
 # END executes code at the end of the runtime such as after hook.
 END {
   puts "Finalizing execution."

@@ -20,7 +20,7 @@ class Box
   end
 
   # Static (class) methods, public by default
-
+  # to access a static method you have to name this as self
   def self.print_count
     puts "Box count is: #@@count"
   end
