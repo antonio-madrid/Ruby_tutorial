@@ -12,6 +12,7 @@ __LINE__ # Represents the current line number
 
 # Integers
 Integer my_number = 123
+my_other_integer = 45
 
 # Floats
 Float my_float = 1.234
