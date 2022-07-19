@@ -5,7 +5,7 @@ self
 true
 false
 nil # Represents undefined
-__FILE__  # Represents the name of the current file
+__FILE__ # Represents the name of the current file
 __LINE__ # Represents the current line number
 
 # Ruby basic literals
@@ -17,7 +17,6 @@ my_other_integer = 45
 # Floats
 Float my_float = 1.234
 my_science_float = 1.0e6
-
 
 # String literals
 # Simple quotes, it does not allow using string interpolations or backslash notation

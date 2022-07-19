@@ -1,5 +1,3 @@
-# Comments
-
 # Define a class
 class Box
 
@@ -76,7 +74,6 @@ class Box
   #   Box.new(@width + other.width, @height + other.height)
   # end
 
-
   # Define unary minus to negate the constructor
   def -@
     Box.new(-@width, -@height)
@@ -108,7 +105,6 @@ class BigBox < Box
     puts "Big box area is: #{@area}"
   end
 
-
 end
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -135,7 +131,6 @@ puts "Height of the box is: #{height}"
 
 puts "Area of the box: #{box.get_area}"
 
-
 # create a new subclass
 big_box = BigBox.new(20, 40)
 
@@ -143,7 +138,6 @@ big_box.print_area
 
 # using override method
 big_box.get_area
-
 
 # using operator overloading
 
@@ -158,7 +152,6 @@ puts "Negative box area: #{negative_box.get_area}"
 # performing a class attributes scalar multiplication
 scalar_box = box * 13
 puts "Scalar box area: #{scalar_box.get_area}"
-
 
 # Freezing objects turns an object to a constant object, it cannot be modified
 box.freeze
