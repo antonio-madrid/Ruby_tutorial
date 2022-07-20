@@ -33,6 +33,21 @@ puts "My name is #{my_array[0]}"
 
 my_array.each { |i| puts "Array value: #{i}" }
 
+# Array object
+my_other_array = Array.new(20) # Defining the array size
+puts "Array size is: #{my_other_array.size}"
+
+my_other_array[0] = 0 # assigning a value to the first position of the array
+
+fourth_array_position_value = my_other_array.at(4)
+puts "Fourth array position value: #{fourth_array_position_value}"
+
+my_other_array.push(3) # Adds a value at the end of the array
+
+my_other_array.append 1 # Also adds a value at the end of the array
+
+my_other_array.fill {|previous_number | previous_number = previous_number * 2 } # it fills an array with the given value or the given block of code
+
 # Hashes on Ruby
 my_hash = { "red" => 0xf00, "green" => 0x0f0, "blue" => 0x00f }
 puts "Red color code is #{my_hash['red']}"
