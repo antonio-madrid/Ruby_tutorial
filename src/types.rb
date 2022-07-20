@@ -54,5 +54,12 @@ puts "Red color code is #{my_hash['red']}"
 
 my_hash.each { |key, value| print key, " is ", value, "\n" }
 
+# Hash object
+my_other_hash = Hash["key1": "First value", "key2": "Second value"] # creating a hash with Hash object
+puts "First key is: #{my_other_hash[:key1]}"
+
+my_other_hash[:key3] = "Third value" # Add a new value to the hash
+
+puts "stop"
 # Ruby ranges, it allows to create an interval
 (1..10).each { |n| print n, ' ' }
