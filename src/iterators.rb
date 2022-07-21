@@ -19,10 +19,7 @@ puts "First enumerator value is: #{my_enumerator.next}" # the enumerable can be 
 puts "Second enumerator value is: #{my_enumerator.next}"
 puts "Third enumerator value is: #{my_enumerator.next}"
 
-
-
 my_ary = [1, 2, 3, 4]
 my_enumerator = my_ary.collect { |x| 10 * x } # a collection can be operated resulting in a new array
 
 puts my_enumerator
-
