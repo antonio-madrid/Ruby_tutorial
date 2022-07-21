@@ -46,7 +46,7 @@ my_other_array.push(3) # Adds a value at the end of the array
 
 my_other_array.append 1 # Also adds a value at the end of the array
 
-my_other_array.fill {|previous_number | previous_number = previous_number * 2 } # it fills an array with the given value or the given block of code
+my_other_array.fill { |previous_number| previous_number = previous_number * 2 } # it fills an array with the given value or the given block of code
 
 # Hashes on Ruby
 my_hash = { "red" => 0xf00, "green" => 0x0f0, "blue" => 0x00f }

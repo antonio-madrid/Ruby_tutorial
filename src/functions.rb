@@ -20,12 +20,12 @@ end
 
 my_multi_args_method(MY_NAME, 33)
 
-def my_default_params_method(name = "Anonymous", age = "unknown") # Methods accept default parameters values
+def my_default_params_method(name = "Anonymous", age = "unknown")
+  # Methods accept default parameters values
   my_multi_args_method(name, age)
 end
 
 my_default_params_method
-
 
 # Return values from methods
 def my_sum(number1, number2)
@@ -41,9 +41,10 @@ end
 puts "My data is: #{return_my_data MY_NAME, 33}"
 
 # Variable number of method parameters
-def my_variable_parameters(*args) # you can pass an undetermined number of params
+def my_variable_parameters(*args)
+  # you can pass an undetermined number of params
   puts "The number of parameters is #{args.length}"
-  args.each { |arg| puts "One of the parameters value is: #{arg}"}
+  args.each { |arg| puts "One of the parameters value is: #{arg}" }
 end
 
 my_variable_parameters "Mac", "Windows", "Linux", "Unix"
@@ -68,4 +69,4 @@ def mutant_function
   puts "This is the function message 3"
 end
 
-mutant_function { |i = 1| puts "This is the block message #{i}"} # blocks of code accept parameters and it can be set with a default value
+mutant_function { |i = 1| puts "This is the block message #{i}" } # blocks of code accept parameters and it can be set with a default value

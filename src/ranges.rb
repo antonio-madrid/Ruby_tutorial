@@ -34,7 +34,6 @@ puts "Range 1-2 max number: #{range_1_2.max}"
 rejected_numbers = range_1_2.reject { |i| i > 1 }
 puts "Rejected numbers: #{rejected_numbers}"
 
-
 # Ranges as conditions, ranges can be use as conditionals
 score = 70
 
@@ -47,7 +46,6 @@ result = case score
          end
 
 puts "By the score: #{score} then the result is: #{result}"
-
 
 # Ranges as intervals, ranges can be use to see if some value falls within an interval
 
