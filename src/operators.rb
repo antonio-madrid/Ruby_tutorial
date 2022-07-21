@@ -53,8 +53,8 @@ not true # false
 true ? true : false # if Condition true ? then value : otherwise value2
 
 # Range operator
-1..10 # Create a range from 1 to 10
-1...9 # Create a range from 1 to 9
+1..10 # Create a range from 1 to 10 - inclusive
+1...9 # Create a range from 1 to 9 - excluding highest value
 
 # defined? operator, it determines whether or not the passed variable, or method is defined
 defined? my_num # "local-variable"

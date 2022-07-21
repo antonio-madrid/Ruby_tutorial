@@ -60,6 +60,5 @@ puts "First key is: #{my_other_hash[:key1]}"
 
 my_other_hash[:key3] = "Third value" # Add a new value to the hash
 
-puts "stop"
 # Ruby ranges, it allows to create an interval
 (1..10).each { |n| print n, ' ' }
