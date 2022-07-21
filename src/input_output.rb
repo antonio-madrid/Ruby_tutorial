@@ -101,6 +101,12 @@ puts Dir.pwd # writes current working directory
 Dir.chdir("..") # change to the indicated path
 puts Dir.pwd
 
+# Listing a directory
+puts Dir.entries "/usr/bin" # similar to ls on Unix
+
+bin_directories = Dir["/usr/bin/*"] # lists a specific path
+puts bin_directories
+
 # Create a directory
 Dir.mkdir("my_new_directory", 755) # creating a directory with permissions
 
