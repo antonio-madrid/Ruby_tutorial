@@ -51,3 +51,41 @@ rescue Exception => error
 ensure
   puts "This code will be executed anyways"
 end
+
+# else in exceptions, it only be execute if no errors are raised
+begin
+  puts "No exception is going to be raise here."
+rescue Exception => error
+  puts error.message
+  puts error.backtrace.inspect
+else
+  puts "No exception has been raised, so this code has been executed."
+ensure
+  puts "Ensuring the execution, this piece of code is always executed."
+end
+
+# Ruby catch & throw, catch execute a piece of code y throw is not called
+
+def prompt_and_get(prompt)
+  print prompt
+  res = readline.chomp # read a line from standard input/output
+  throw :quiteRequested if res == "!" # condition to call to throw
+  res
+end
+
+# catch & throw helps to jump out when a piece of code goes wrong
+catch :quiteRequested do
+  # catch will execute the block code unless throw condition is true
+  name = prompt_and_get "Name: " # these lines will be execute while "!" is not typed into the keyboard
+  age = prompt_and_get "Age: "
+  sex = prompt_and_get "Sex: "
+end
+
+# Ruby exception types
+
+Exception # Exception type is at the top of the hierarchy
+StandardError # For input/output errors
+SystemExit
+Interrupt
+NoMemoryError
+SignalException
