@@ -156,9 +156,9 @@ puts "Scalar box area: #{scalar_box.get_area}"
 # Freezing objects turns an object to a constant object, it cannot be modified
 box.freeze
 if box.frozen?
-  puts "Box object is a frozen object"
+  puts 'Box object is a frozen object'
 else
-  puts "Box object is a normal object"
+  puts 'Box object is a normal object'
 end
 
 # Accessing to class constants

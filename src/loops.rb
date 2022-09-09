@@ -7,12 +7,13 @@ end
 
 # Ruby while modifier, it performs a do while
 begin
-  puts "Extra saludations #{count} times"
+  puts "Extra salutations #{count} times"
   count += 1
 end while count < 5
 
 # Ruby until statement, executes code while conditional is false, equal to while not
-until count == 0
+# until count == 0 is the same than the following line
+until count.zero?
   puts "Reducing count #{count}"
   count -= 1
 end
@@ -29,6 +30,7 @@ for i in 0..5
 end
 
 # Each loop, functional way to perform a for loop
+# 6.times do |iterator| is the same than the following line
 (0..5).each do |iterator|
   puts "Classical each form #{iterator}"
 end
@@ -51,7 +53,7 @@ puts "That's my age again: #{$age}"
 
 # Ruby next statement, jumps to the next loop iteration
 (0..10).each { |iterator|
-  if iterator % 2 == 0
+  if (iterator % 2).zero?
     next
   end
   puts "Odd numbers: #{i}"

@@ -58,11 +58,11 @@ true ? true : false # if Condition true ? then value : otherwise value2
 
 # defined? operator, it determines whether or not the passed variable, or method is defined
 defined? my_num # "local-variable"
-$mi_global_variable = "I am global"
+$mi_global_variable = 'I am global'
 defined? $mi_global_variable # "global-variable"
 
 def my_function
-  "Hello there"
+  'Hello there'
 end
 
 defined? my_function # method

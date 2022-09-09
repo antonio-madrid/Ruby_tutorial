@@ -1,6 +1,6 @@
 # Methods
 def my_no_arguments_method
-  puts "Method without arguments."
+  puts 'Method without arguments.'
 end
 
 my_no_arguments_method # executing method without arguments
@@ -9,7 +9,7 @@ def my_args_method(name)
   puts "Hello, my name is #{name}"
 end
 
-MY_NAME = "Antonio"
+MY_NAME = 'Antonio'
 my_args_method(MY_NAME)
 
 my_args_method MY_NAME # Methods with args can be called without ()
@@ -20,7 +20,7 @@ end
 
 my_multi_args_method(MY_NAME, 33)
 
-def my_default_params_method(name = "Anonymous", age = "unknown")
+def my_default_params_method(name = 'Anonymous', age = 'unknown')
   # Methods accept default parameters values
   my_multi_args_method(name, age)
 end
@@ -47,14 +47,14 @@ def my_variable_parameters(*args)
   args.each { |arg| puts "One of the parameters value is: #{arg}" }
 end
 
-my_variable_parameters "Mac", "Windows", "Linux", "Unix"
+my_variable_parameters 'Mac', 'Windows', 'Linux', 'Unix'
 
 # undef statement, it allow to cancel a method definition
 
 undef my_args_method # It is not a recommended practice, worse in a class
 
 begin
-  my_args_method "an" # Calling an undefined method will throw an error
+  my_args_method 'an' # Calling an undefined method will throw an error
 rescue
   puts "my_args_method was undefined"
 end
@@ -62,11 +62,11 @@ end
 # Blocks of code on methods, it will allow to introduce extra code on an specific function
 
 def mutant_function
-  puts "This is the function message 1"
+  puts 'This is the function message 1'
   yield # this keyword invokes a block of code passed to the function
-  puts "This is the function message 2"
+  puts 'This is the function message 2'
   yield 2 # yield keyword can accept parameters to be passed to the block of code invoke, even more than one parameter can be passed
-  puts "This is the function message 3"
+  puts 'This is the function message 3'
 end
 
 mutant_function { |i = 1| puts "This is the block message #{i}" } # blocks of code accept parameters and it can be set with a default value

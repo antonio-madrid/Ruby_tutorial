@@ -50,13 +50,13 @@ puts "By the score: #{score} then the result is: #{result}"
 # Ranges as intervals, ranges can be use to see if some value falls within an interval
 
 if (1..10) === 5 # to check if a range includes a value the equality operator is needed
-  puts "5 lies in the range 1 to 10"
+  puts '5 lies in the range 1 to 10'
 end
 
 if ('a'..'j') === 'c'
-  puts "c lies in the range a to j"
+  puts 'c lies in the range a to j'
 end
 
 if ('a'..'j') === 'z'
-  puts "z lies in the range a to j" # this code won't do
+  puts 'z lies in the range a to j' # this code won't do
 end

@@ -2,7 +2,7 @@
 
 # p, most basic operator for debugging
 
-my_name = "Antonio"
+my_name = 'Antonio'
 
 p my_name # Just print the variable value
 
@@ -11,6 +11,7 @@ p my_name # Just print the variable value
 
 # execute the code through byebug command
 
+byebug # keyword to make byebug breakpoint
 debugger # keyword to make byebug breakpoint
-# type one of the next commands: help, next, continue
+# type one of the next commands: help, next, continue, step
 # or execute the code through the prompt
