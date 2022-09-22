@@ -1,3 +1,4 @@
+require 'byebug'
 # Debugging in Ruby
 
 # p, most basic operator for debugging
