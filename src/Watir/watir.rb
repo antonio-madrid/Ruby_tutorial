@@ -26,7 +26,7 @@ browser.wait_until { browser.url.include? 'wikipedia' }
 
 # Use browser object to access different HTML elements by its name tag, e.g. browser.div
 # Pass as parameter the attribute you want to use to determinate what specific element you want
-browser.span(text: 'Wikipedia').wait_until(&:visible?)
+browser.span(text: 'Wikipedia').wait_until(&:visible?) # It executes span.visible? until true
 
 # Pass id attribute to find an specific element by its ID
 browser.body(id: 'www-wikipedia-org').wait_until(&:visible?)

@@ -13,7 +13,7 @@ My_New_Module.a_module_function # using a function of an imported module without
 a_module_function # using a module function with ambiguity
 
 # Relative path import
-require_relative '../classes' # When importing a class is not necessary to "include" the code explicitly
+require_relative '../classes/classes' # When importing a class is not necessary to "include" the code explicitly
 
 my_new_box = Box.new(50, 60) # imported classes can be called directly
-puts "My new box area is: #{my_new_box.get_area} "
+puts "My new box area is: #{my_new_box.area} "

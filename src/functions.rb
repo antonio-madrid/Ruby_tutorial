@@ -27,6 +27,18 @@ end
 
 my_default_params_method
 
+
+def my_optional_arguments_method(optional_arg = nil)
+  if optional_arg
+    puts "Optional argument given: #{optional_arg}"
+  else
+    puts 'Optional argument was not given.'
+  end
+end
+
+my_optional_arguments_method 'This is the optional argument.'
+my_optional_arguments_method
+
 # Return values from methods
 def my_sum(number1, number2)
   number1 + number2 # Ruby returns a value by default, which is the result of its last statement
@@ -56,17 +68,5 @@ undef my_args_method # It is not a recommended practice, worse in a class
 begin
   my_args_method 'an' # Calling an undefined method will throw an error
 rescue
-  puts "my_args_method was undefined"
+  puts 'my_args_method was undefined'
 end
-
-# Blocks of code on methods, it will allow to introduce extra code on an specific function
-
-def mutant_function
-  puts 'This is the function message 1'
-  yield # this keyword invokes a block of code passed to the function
-  puts 'This is the function message 2'
-  yield 2 # yield keyword can accept parameters to be passed to the block of code invoke, even more than one parameter can be passed
-  puts 'This is the function message 3'
-end
-
-mutant_function { |i = 1| puts "This is the block message #{i}" } # blocks of code accept parameters and it can be set with a default value

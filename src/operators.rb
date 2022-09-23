@@ -57,18 +57,38 @@ true ? true : false # if Condition true ? then value : otherwise value2
 1...9 # Create a range from 1 to 9 - excluding highest value
 
 # defined? operator, it determines whether or not the passed variable, or method is defined
-defined? my_num # "local-variable"
+puts "What is my_num: #{defined? my_num}" # "local-variable"
+
 $mi_global_variable = 'I am global'
-defined? $mi_global_variable # "global-variable"
+puts "What is $mi_global_variable: #{defined? $mi_global_variable}" # "global-variable"
+
+puts "What is defined? 'hello: '#{defined? 'hello'}" # expression
 
 def my_function
   'Hello there'
 end
 
-defined? my_function # method
+puts "What is defined? my_function: #{defined? my_function}" # method
 
 # Double colon operator, it allows to access outside modules or classes constants
 module MY_MODULE
   MY_CONST = 0
 end
-puts MY_MODULE::MY_CONST
+
+puts "MY_MODULE::MY_CONST value: #{MY_MODULE::MY_CONST}"
+
+
+# Safe Navigation Operator &.
+$LOAD_PATH << '.'
+require '../src/classes/user_class'
+
+antonio_jr = Son.new('Antonio junior', 10)
+antonio = User.new('Antonio', 33, antonio_jr)
+# Safe Navigation Operator call a method when is not nul
+puts antonio&.greet
+# Similar to JavaScript ? Optional chaining Operator ?.
+puts antonio&.son&.say_hello
+
+mary_carmen = User.new('Mary Carmen', 38)
+# Safe Navigation operator avoids null errors
+puts mary_carmen&.son&.say_hello

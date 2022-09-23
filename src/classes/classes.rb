@@ -1,9 +1,13 @@
+# ---------------------------------------------------------------------------------------------------------------------
+# Classes
+# ---------------------------------------------------------------------------------------------------------------------
+
 # Define a class
 class Box
 
   # Constant variables
-  BOX_SIZE = "Normal"
-  BOX_COMPANY = "Amazon"
+  BOX_SIZE = 'Normal'
+  BOX_COMPANY = 'Amazon'
 
   # Static (class) variables
   @@count = 0
@@ -12,6 +16,7 @@ class Box
   def initialize(w, h)
     # Private (instance) variables
     @width, @height = w, h
+    @branch = 'Hacendado'
 
     # Operating a static (class) variable
     @@count += 1
@@ -26,25 +31,22 @@ class Box
   # Instance methods, public by default
 
   # Getters for private (instance) variables
-  def get_width
-    @width
-  end
-
-  def get_height
-    @height
-  end
+  # Ruby way to create only getters
+  attr_reader :height, :branch
 
   # Setters for private (instance) variables
-  def set_width=(value)
-    @width = value
-  end
-
   def set_height=(value)
     @height = value
   end
 
+  # Getter & Setter at the same time
+  def width(value = nil)
+    @width = value if value
+    @width
+  end
+
   # Normal instance method
-  def get_area
+  def area
     @width * @height
   end
 
@@ -86,21 +88,25 @@ class Box
 
 end
 
+# ---------------------------------------------------------------------------------------------------------------------
+# Subclasses
+# ---------------------------------------------------------------------------------------------------------------------
+
 # Inheritance, subclasses
 class BigBox < Box
 
   # Constant variables
-  BOX_COMPANY = "Flex"
-  BOX_SIZE = "Big"
+  BOX_COMPANY = 'Flex'
+  BOX_SIZE = 'Big'
 
   # New subclass instance method
   def print_area
-    @area = self.get_area
+    @area = self.area
     puts "Big box area is: #{@area}"
   end
 
   # Method override
-  def get_area
+  def area
     @area = @width * @height
     puts "Big box area is: #{@area}"
   end
@@ -118,18 +124,18 @@ age = 33
 box = Box.new(10, 20)
 
 # get private attribute values of an object
-width = box.get_width
-height = box.get_height
+width = box.width # Getter & Setter at the same time
+height = box.height
 
 # set values of object private attributes
-box.set_width = 30
+box.width 30 # Getter & Setter at the same time
 box.set_height = 50
 
 # Ruby string interpolation
 puts "Width of the box is: #{width}"
 puts "Height of the box is: #{height}"
 
-puts "Area of the box: #{box.get_area}"
+puts "Area of the box: #{box.area}"
 
 # create a new subclass
 big_box = BigBox.new(20, 40)
@@ -137,7 +143,7 @@ big_box = BigBox.new(20, 40)
 big_box.print_area
 
 # using override method
-big_box.get_area
+big_box.area
 
 # using operator overloading
 
@@ -147,11 +153,11 @@ big_box.get_area
 
 # negating class attributes
 negative_box = -box
-puts "Negative box area: #{negative_box.get_area}"
+puts "Negative box area: #{negative_box.area}"
 
 # performing a class attributes scalar multiplication
 scalar_box = box * 13
-puts "Scalar box area: #{scalar_box.get_area}"
+puts "Scalar box area: #{scalar_box.area}"
 
 # Freezing objects turns an object to a constant object, it cannot be modified
 box.freeze
