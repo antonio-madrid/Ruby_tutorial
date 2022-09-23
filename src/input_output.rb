@@ -1,24 +1,32 @@
-# $LOAD_PATH << '.'
+# ---------------------------------------------------------------------------------------------------------------------
 # IO class methods, all the IO methods derived from the IO class
+# ---------------------------------------------------------------------------------------------------------------------
 
 # puts, prints the output, finish with a new line
 message = 'Print a message'
 puts message
 puts "Print an operation: #{2 + 2}"
 
+
 # print, prints the output without any new line
 print 'Hello'
 print " there\n"
 
+
 # putc, prints just one character at a time
 putc message
+
 
 # gets, takes any input from the STDIN
 # puts "\nEnter your name"
 # name = gets
 # puts "Your name is #{name}"
 
+
+# ---------------------------------------------------------------------------------------------------------------------
 # File object
+# ---------------------------------------------------------------------------------------------------------------------
+
 
 MY_LETTER_PATH = 'support/my_letter.txt'
 
@@ -37,18 +45,30 @@ my_letter = File.open(MY_LETTER_PATH)
 lines = my_letter.readlines # storing all document's lines in an array
 puts lines.at 0
 
+
+
 # Write a file
 MY_NEW_FILE_PATH = 'support/my_new_letter.txt'
 my_new_letter = File.new(MY_NEW_FILE_PATH, 'w+')
 my_new_letter.syswrite 'Hello there' # writes data on a file
 my_new_letter.close
 
+
+
 # Renaming a file
 MY_NEW_FILE_RENAMED_PATH = 'support/my_new_letter'
 File.rename MY_NEW_FILE_PATH, MY_NEW_FILE_RENAMED_PATH if File.exist?(MY_LETTER_PATH)
 
+
+
 # Deleting a file
 File.delete MY_NEW_FILE_RENAMED_PATH if File.exist?(MY_NEW_FILE_RENAMED_PATH)
+
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# File checkers
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Check if a file is a file
 if File.file?(MY_LETTER_PATH)
@@ -96,18 +116,33 @@ end
 file_type = File.ftype MY_LETTER_PATH
 puts "my_letter.txt type is: #{file_type}"
 
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 # Dir object, allows to change ruby current directory and manipulating them
+# ---------------------------------------------------------------------------------------------------------------------
+
 puts Dir.pwd # writes current working directory
 Dir.chdir('..') # change to the indicated path
 puts Dir.pwd
 
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 # Listing a directory
+# ---------------------------------------------------------------------------------------------------------------------
+
 puts Dir.entries '/usr/bin' # similar to ls on Unix
 
 bin_directories = Dir['/usr/bin/*'] # lists a specific path
 puts bin_directories
 
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 # Create a directory
+# ---------------------------------------------------------------------------------------------------------------------
+
 Dir.mkdir('my_new_directory', 755) # creating a directory with permissions
 
 # Delete a directory

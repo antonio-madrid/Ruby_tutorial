@@ -1,16 +1,35 @@
-# makes Ruby aware that included files must be searched in the current directory
+# ---------------------------------------------------------------------------------------------------------------------
+#  LOAD_PATH
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Makes Ruby aware that included files must be searched in the current directory
+
 $LOAD_PATH << '.'
+
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# require
+# ---------------------------------------------------------------------------------------------------------------------
 
 # require_relative 'modules' # importing a module to use it
 
 # Root project path import
 require 'src/modules/modules' # importing a module to use it from a root project path
 
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# include
+# ---------------------------------------------------------------------------------------------------------------------
+
 # makes accessible the imported module code to this script
 include My_New_Module
 
 My_New_Module.a_module_function # using a function of an imported module without ambiguity
 a_module_function # using a module function with ambiguity
+
+
 
 # Relative path import
 require_relative '../classes/classes' # When importing a class is not necessary to "include" the code explicitly

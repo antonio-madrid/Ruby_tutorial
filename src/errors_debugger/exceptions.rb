@@ -1,4 +1,6 @@
+# ---------------------------------------------------------------------------------------------------------------------
 # Handling exceptions
+# ---------------------------------------------------------------------------------------------------------------------
 
 # every code that can raise an error must be tested in a begin block of code
 begin
@@ -18,7 +20,12 @@ end
 
 puts "File thrown an error, null was store in file variable: #{file}"
 
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 # Retry a code that has failed
+# ---------------------------------------------------------------------------------------------------------------------
+
 file_name = '/unexistant_file'
 
 begin
@@ -32,7 +39,12 @@ rescue
   retry # this will execute the begin code again
 end
 
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 # Raise errors
+# ---------------------------------------------------------------------------------------------------------------------
+
 begin
   puts 'This code will raise an error'
   raise 'An wild error appeared'
@@ -43,7 +55,12 @@ rescue Exception => error
   puts "Error trace: #{error.backtrace.inspect}"
 end
 
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 # Ensure statement, will executes a piece of code after a try catch
+# ---------------------------------------------------------------------------------------------------------------------
+
 begin
   raise 'Another exception'
 rescue Exception => error
@@ -52,7 +69,12 @@ ensure
   puts 'This code will be executed anyways'
 end
 
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 # else in exceptions, it only be execute if no errors are raised
+# ---------------------------------------------------------------------------------------------------------------------
+
 begin
   puts 'No exception is going to be raise here.'
 rescue Exception => error
@@ -64,7 +86,11 @@ ensure
   puts 'Ensuring the execution, this piece of code is always executed.'
 end
 
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 # Ruby catch & throw, catch execute a piece of code y throw is not called
+# ---------------------------------------------------------------------------------------------------------------------
 
 def prompt_and_get(prompt)
   print prompt
@@ -81,7 +107,11 @@ catch :quiteRequested do
   sex = prompt_and_get 'Sex: '
 end
 
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 # Ruby exception types
+# ---------------------------------------------------------------------------------------------------------------------
 
 Exception # Exception type is at the top of the hierarchy
 StandardError # For input/output errors

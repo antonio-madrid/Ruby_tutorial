@@ -1,5 +1,3 @@
-require 'byebug'
-
 # / allows to create a RegEx
 # =~ evaluates the first match position of a RegEx
 first_position = '10:00 AM' =~ /\d{2}:\d{2}/
