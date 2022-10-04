@@ -1,2 +1,2 @@
 # Ruby_tutorial
-A small Ruby tutorial with samples
+A series of Ruby sentences which acts as a template for Ruby using or learning.
