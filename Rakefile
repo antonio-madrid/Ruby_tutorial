@@ -33,7 +33,7 @@ end
 desc 'Manage the backup processes'
 namespace :backup do # creates a group of tasks
 
-  task :create do #
+  task :create do
     p 'Creating a backup...'
   end
 
@@ -61,4 +61,13 @@ end
 desc 'Print working directory using a Unix command'
 task :pwd do
   sh 'pwd' # the way to execute Unix shell commands in Ruby
+end
+
+
+# The way to link the RubyMine debugger to a Cucumber execution with Ruby is through the Rakefile
+namespace :debug_mode do
+  task :run do
+    # TODO: Use Cucumber command
+    sh 'ruby ./src/tests/Watir/watir.rb'
+  end
 end
