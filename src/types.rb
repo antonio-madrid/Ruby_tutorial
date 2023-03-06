@@ -26,20 +26,6 @@ my_science_float = 1.0e6
 
 
 
-# ---------------------------------------------------------------------------------------------------------------------
-# String literals
-# ---------------------------------------------------------------------------------------------------------------------
-
-# Simple quotes, it does not allow using string interpolations or backslash notation
-puts 'Using a scaped backslash \\'
-
-
-# Double quotes, it allows using string interpolation and backlash notation
-puts "Using backslash directly \n "
-interpolated_string = 'Interpolated string'
-puts "Using string interpolation #{interpolated_string}"
-
-
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Array type

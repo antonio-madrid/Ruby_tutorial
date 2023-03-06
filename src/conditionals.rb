@@ -38,6 +38,7 @@ puts 'It will be displayed unless option is true' unless option
 # ---------------------------------------------------------------------------------------------------------------------
 
 $age = 33
+
 case $age
 when 0..2
   puts 'Baby'

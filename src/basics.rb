@@ -2,7 +2,7 @@
 # Comments
 # ---------------------------------------------------------------------------------------------------------------------
 
-# Block of comments
+# Block of comments - old style
 =begin
 This is a block
 of comments
@@ -46,18 +46,6 @@ EOF
 
 
 
-# ---------------------------------------------------------------------------------------------------------------------
-# Strings
-# ---------------------------------------------------------------------------------------------------------------------
-
-# General delimited Strings
-puts %{This is another way to create a string}
-puts %Q{ This is another way to create a string as well. }
-puts %q[ This is also another way to create a string. ]
-puts %x!ls! # This is a way to execute the ls command on the project root a get the string result
-
-# String object
-my_string = String.new('This is a way to create an string through the String object.')
 
 # Print executed commands
 print <<`EOF`
