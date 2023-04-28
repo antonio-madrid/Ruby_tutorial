@@ -31,6 +31,7 @@ def my_multi_args_method(name, age)
 end
 
 my_multi_args_method(MY_NAME, 33)
+my_multi_args_method MY_NAME, 33 # Methods with args can be called without ()
 
 
 

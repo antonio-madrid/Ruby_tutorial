@@ -87,7 +87,7 @@ puts "That's my age again: #{$age}"
 # Ruby next statement, jumps to the next loop iteration
 # ---------------------------------------------------------------------------------------------------------------------
 
-(0..10).each { |iterator|
+11.times { |iterator|
   if (iterator % 2).zero?
     next
   end
@@ -101,7 +101,7 @@ puts "That's my age again: #{$age}"
 # ---------------------------------------------------------------------------------------------------------------------
 
 restart = false
-(0..2).each do |iterator|
+3.times do |iterator|
   if restart
     puts "Restarting this loop"
     redo # It can result in an endless loop
