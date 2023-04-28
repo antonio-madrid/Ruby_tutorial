@@ -1,23 +1,13 @@
+# frozen_string_literal: true
+
 # ---------------------------------------------------------------------------------------------------------------------
 # Import all gems (libraries) in use to this script
 # ---------------------------------------------------------------------------------------------------------------------
 
 require 'byebug'
 require 'watir'
-require 'webdrivers'
 
 # Watir is a UI testing library similar to WebdriverIO or Playwright
-
-
-# ---------------------------------------------------------------------------------------------------------------------
-# Browser
-# ---------------------------------------------------------------------------------------------------------------------
-
-# ------------------------------------
-# Creating a browser
-# ------------------------------------
-
-browser = nil
 
 browser_opts = {
   accept_insecure_certs: true,
@@ -26,15 +16,7 @@ browser_opts = {
 
 browser = Watir::Browser.new(:chrome, options: browser_opts) # instances the browser
 
-
-# ------------------------------------
-# Browser common operations
-# ------------------------------------
-
 browser.goto('https://www.wikipedia.org/') # navigates through URLs
-
-current_url = browser.url # returns the current URL
-
 
 
 
@@ -118,41 +100,3 @@ body.wait_until(&:visible?)
 link.wait_until timeout: 40, message: 'Link element not found', &:present?
 
 browser.a(id: 'js-link-box-en').wait_while(&:hidden?) # Waits while the element is still hidden
-
-
-
-# ------------------------------------
-# Other Selectors
-# ------------------------------------
-
-# CSS selector
-
-# Watir allows to use a CSS Selector instead of an id, text or any other attribute
-is_body_present_by_css = browser.element(css: '#www-wikipedia-org').present?
-puts 'Body element accessed through a CSS Selector' if is_body_present_by_css
-
-
-# XPath selector
-
-is_body_present_by_xpath = browser.element(xpath: '//*[@id="www-wikipedia-org"]').present?
-puts 'Body element accessed through a Xpath' if is_body_present_by_xpath
-
-
-
-
-# ------------------------------------
-# DOM navigation
-# ------------------------------------
-
-# Chaining elements
-
-# allows to navigate through children elements
-# In order to access to Shadow DOM elements, chaining is essential
-browser.element(class: 'central-textlogo').img(class: 'central-featured-logo').present? # img is a children of this div
-
-
-# Parents & Siblings
-
-# allows to access adjacent elements
-browser.element(class: 'central-textlogo').parent # returns the element parent
-browser.element(class: 'central-textlogo').siblings # returns an array with the sibling elements

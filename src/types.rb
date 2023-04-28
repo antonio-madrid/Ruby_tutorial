@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # There is no need to indicate variable types, it is optional as Python
 
 # ---------------------------------------------------------------------------------------------------------------------

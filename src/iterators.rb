@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # ---------------------------------------------------------------------------------------------------------------------
 # Iterators, methods supported by Collections. Objects that store a group of data
 # ---------------------------------------------------------------------------------------------------------------------
@@ -20,6 +22,13 @@ end
 ary.each { |i| puts "Iterating a collection (Array) with brackets, current value is: #{i}" }
 
 
+# ---------------------------------------------------------------------------------------------------------------------
+# Array.all? - checks if all the elements fulfill the given condition
+# ---------------------------------------------------------------------------------------------------------------------
+
+ary.all? { |elemento| elemento.nil? }
+is_null = ary.all?(&:nil?)
+puts "The array is null: #{is_null}"
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Collect Iterator, it creates an iterator from a group of data
@@ -38,3 +47,4 @@ my_ary = [1, 2, 3, 4]
 my_enumerator = my_ary.collect { |x| 10 * x } # a collection can be operated resulting in a new array
 
 puts my_enumerator
+

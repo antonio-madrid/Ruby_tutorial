@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Sample of a User class
 class User
   @son = nil
 
@@ -21,6 +24,7 @@ class User
 
 end
 
+# Sample of a Son class
 class Son < User
   def initialize(name, age)
     super name, age, nil

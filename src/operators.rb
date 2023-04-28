@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # ---------------------------------------------------------------------------------------------------------------------
 # Arithmetic Operators
 # ---------------------------------------------------------------------------------------------------------------------
@@ -126,8 +128,7 @@ puts "MY_MODULE::MY_CONST value: #{MY_MODULE::MY_CONST}"
 # Safe Navigation Operator &.
 # ---------------------------------------------------------------------------------------------------------------------
 
-$LOAD_PATH << '.'
-require '../src/classes/user_class'
+require './src/classes/user_class'
 
 antonio_jr = Son.new('Antonio junior', 10)
 antonio = User.new('Antonio', 33, antonio_jr)

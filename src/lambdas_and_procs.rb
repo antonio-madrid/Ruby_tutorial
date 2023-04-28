@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # ---------------------------------------------------------------------------------------------------------------------
 # Blocks of code {} can have arguments between | |
 # ---------------------------------------------------------------------------------------------------------------------
@@ -114,9 +116,7 @@ def printer(message = nil)
 end
 
 
-# & applied to a :symbol = &:
-$LOAD_PATH << '.'
-require '../src/classes/user_class'
+require './src/classes/user_class'
 
 antonio = User.new 'Antonio', 33
 lorena = User.new 'Lorena', 33
@@ -127,5 +127,5 @@ users = [
 
 # &: convert an object to a proc if isn't already, it calls to_proc
 # And it will execute the element method called
-puts users.collect(&:unordered_args_function) # it executes greet method of the given user
+puts users.collect(&:greet) # it executes greet method of the given user
 puts users.collect { |user | user.greet } # It is the same, &: transforms a block of code to a proc
